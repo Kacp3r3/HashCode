@@ -22,7 +22,7 @@ public:
 			size_t nTags;
 			_plik >> orient;
 			_plik >> nTags;
-			_photo.emplace_back(orient, nTags);
+			_photo.emplace_back(orient, nTags,i);
 			for (size_t j = 0; j < nTags; ++j)
 			{
 				std::string tag;
@@ -45,13 +45,13 @@ public:
 		{
 			if (_photo[i].getOrient()=='H')
 			{
-				_plik << i << '\n';
+				_plik << _photo[i].getID() << '\n';
 			}
 			else
 			{
 				Vcount++;
 				if (Vcount > V) break;
-				_plik << i << ' ' << i + 1 << '\n';
+				_plik << _photo[i].getID() << ' ' << _photo[i+1].getID() << '\n';
 				i++;
 			}
 		}

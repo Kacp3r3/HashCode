@@ -5,7 +5,7 @@ class Photo
 {
 public:
 	Photo() {};
-	Photo(char o,int nTags): _tags(0), _orient(o)
+	Photo(char o,int nTags, size_t id): _tags(0), _orient(o), id(id)
 	{
 		_tags.reserve(nTags); 
 	};
@@ -21,9 +21,10 @@ public:
 		return _orient < src._orient;
 	}
 	char getOrient() { return _orient; };
-
+	size_t getID() { return id; };
 private:
 	std::vector<std::string> _tags;
 	char _orient;
+	size_t id;
 };
 #endif
