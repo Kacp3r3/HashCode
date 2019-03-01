@@ -2,7 +2,7 @@
 
 int main()
 {
-	SlideMaker sm("datasets/e.txt");
-	sm.makeSlideShow("out/E_out.txt");
+	SlideMaker sm("datasets/b.txt");
+	sm.makeSlideShow("out/B_out.txt");
 	return 0;
 }
